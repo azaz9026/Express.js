@@ -24,10 +24,14 @@ app.get('/' , function(req , res){
     res.render('index')
 })
 
+app.get('/contact' , function(req , res){
+    res.render('contact')
+})
+
 /** Route Paremeter */
 
 app.get('/profile/:username' , function( req , res ){
-    res.send(`hello ${req.params.username}`)
+    res.send(` Hello from ${req.params.username}`)
 })
 
 
