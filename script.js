@@ -1,19 +1,23 @@
-const express = require("express")
+const express = require('express')
 const app = express()
+
 
 /** Middleware */
 
-app.use(function(req , res , next){
-    res.send("middleware");
-    next();
+app.use( function(req , res , next){
+    res.send("Middleware")
+    next()
 })
 
-app.get('/' , function( req , res ){
-    res.send("Hello World")
+/** Configure of Ejs */
+
+app.set('view engine', 'ejs')
+
+/** Routing */
+
+app.get('/' , function(req , res){
+    res.render('index')
 })
 
-app.get('/profile' , function( req , res ){
-    res.send("Hello my profile")
-})
 
 app.listen(3000)
